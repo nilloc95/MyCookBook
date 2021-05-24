@@ -1,0 +1,72 @@
+
+
+    <section id="recipes" class="shown mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 id="product-title" class="text-center">{{data.title}}</h1><br>
+                    <h4 class="text-secondary d-flex align-items-center justify-content-center">
+                        {{#if (hasLiked data.userLikes data._id)}}
+                            <i id="{{data._id}}" class="fas fa-heart ms-2 me-2 icons heart">&nbsp;</i>
+                        {{else}}
+                            <i id="{{data._id}}" class="far fa-heart ms-2 me-2 icons">&nbsp;</i>
+                        {{/if}}
+                        <span class="badge bg-secondary">{{data.likes}}</span>
+                        <span class="float-end">{{{editIconRecipe data.author data.userId data._id}}}</span>
+                    </h4><br>
+                    <h4 class="text-dark text-center border-bottom row">
+                        <div class="col-md-3">Region: {{data.region}}</div>
+                        <div class="col-md-3">Type: {{data.time}}</div>
+                        <div class="col-md-3 ">Diet: {{data.diet}}</div>
+                        <a href="/profile/{{data.author}}" class="col-md-3 author">By: {{data.displayName}}</a>
+
+                    </h4>
+                </div>
+            </div>
+            <div class="row justify-content-md-center my-md-5 mb-sm-0">
+                <div class="col-md-6">
+            {{#if (checkUrl data.image)}}
+                <img src={{data.image}} class="img-fluid" onerror="src = addImage()" alt="{{data.title}}">
+            {{else}}
+                <img src='https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg' class="img-fluid" alt="{{data.title}}">
+            {{/if}}
+                </div>
+                <div class="col-md-6">
+                    <h4 class="border-bottom">Description:</h4>
+                    <div class="description">{{{data.description}}}</div> <br><br>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-5">
+                    <h2 class="border-bottom ">Ingredients:</h2>
+                    <ul class="list-group" id="ingredients">
+                        {{#each data.ingredients}}
+                            <li class="list-group-item"><label><input type="checkbox">&nbsp; {{this}}</label></li>
+                        {{/each}}
+                    </ul>
+                </div>
+   
+                <div class="col-md-5">
+                    <h2 class="border-bottom list-title">Directions:</h2>
+                    <ul class="list-group" id="directions">
+                        {{#each data.instructions}}
+                            <li class="list-group-item"><label><input type="checkbox">&nbsp; {{this}}</label></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h2 class="border-bottom text-center list-title"><i class="far fa-clock"></i></h2>
+                    <ul class="list-group" id="directions">
+                        <li class="list-group-item">&nbsp; Serving Size: &nbsp; {{data.servingSize}}</li>
+                        <li class="list-group-item">&nbsp; Prep Time: &nbsp; {{data.prepTime}}</li>
+                        <li class="list-group-item">&nbsp; Cook Time: &nbsp; {{data.cookTime}}</li>
+                        <li class="list-group-item">&nbsp; Total Time: &nbsp; {{data.totalTime}}</li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+    <script src="/app.js"></script>

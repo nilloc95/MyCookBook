@@ -1,0 +1,35 @@
+<main id="main" class="mb-5">
+        <div class="container-fluid card-container mt-2">
+            <div id="recipes" class="row">    
+                {{#each data}}            
+                    <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 mb-5">
+                         {{{editIcon this.author ../userId this._id}}}
+                        <div class="card h-100" >
+                            <a href="/recipe/{{this._id}}">
+                            {{#if (checkUrl this.image)}}
+                            <img src={{this.image}} class="card-img-top" onerror="src = addImage()" alt="{{this.title}}">
+                            {{else}}
+                            <img src='https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg' class="card-img-top" alt="{{this.title}}">
+                            {{/if}}
+                            </a>
+                            <div class="card-body body-text d-flex flex-column">
+                                <div class="card-title fw-bold ">{{capitalizeWord this.title}}</div> 
+                                <p class="card-text card-main-text">{{stripTags this.description}}</p>
+                                
+                                <div class="bottom mt-auto">
+                                    <a href="/recipe/{{this._id}}" id={{this._id}} class="recipe-link btn mx-2 btn-primary">See Full Recipe</a>
+                                    {{#if (hasLiked ../userLikes this._id)}}
+                                        <i class="fas fa-heart ms-2 me-2 icons heart"></i>
+                                    {{else}}
+                                        <i class="far fa-heart ms-2 me-2 icons"></i>
+                                    {{/if}}
+                                    <span class="badge bg-secondary">{{this.likes}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <script src="/app.js" crossorigin="anonymous"></script>

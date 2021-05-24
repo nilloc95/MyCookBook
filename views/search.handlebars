@@ -1,0 +1,167 @@
+ 
+ {{#if data.message}}
+ <nav class="navbar navbar-expand-md navbar-light bg-light">
+   
+   <div class="container-fluid hidden-button justify-content-center" aria-expanded="false">
+     Sorting & Filters 
+     <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#filtersCollapse" aria-controls="filtersCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    </button>
+   </div>
+    
+  <div class="collapse navbar-collapse" id="filtersCollapse">
+     <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div class="navbar-brand sort-title"> Sorting & Filters:</div>
+    <form class="d-flex" action="/filter" method="GET">
+    <ul class="navbar-nav my-2 my-lg-0" style="--bs-scroll-height: 100px;">
+      {{!-- Sort --}}
+      <li class="nav-item mx-1">
+          <select name="sort" id="sort" class="form-select">
+              <option value="createdAt">New</option>
+              <option value="likes">Likes</option>
+          </select>
+        </li>
+        {{!-- Filter by Region --}}
+      <li class="nav-item mx-1">
+          <select name="region" id="region" class="form-select">
+              <option value="Region">Region</option>
+              <option value="American">American</option>
+              <option value="Italian">Italian</option>                       
+              <option value="French">French</option>
+              <option value="Chinese ">Chinese </option>
+              <option value="Mexican">Mexican</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Thai">Thai</option>
+              <option value="Middle-Eastern">Middle-Eastern</option>
+              <option value="Asian">Asian</option>
+              <option value="European">European</option>
+              <option value="South-America">South-America</option>
+              <option value="African">African</option>
+              <option value="Australian">Australian</option>
+              <option value="Other">Other</option>
+          </select>
+        </li>
+
+      {{!-- Filter By Time of Day --}}
+
+      <li class="nav-item mx-1">
+          <select name="time" id="time" class="form-select">
+              <option value="time">Time of Day</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Breakfast">Breakfast</option>                       
+              <option value="Brunch">Brunch</option>
+              <option value="Dessert ">Dessert </option>
+              <option value="Other">Other</option>
+          </select>
+        </li>
+
+      {{!-- Filter By Diet --}}
+
+      <li class="nav-item mx-1">
+          <select name="diet" id="diet" class="form-select">
+              <option value="diet">Diet</option>
+              <option value="None">None</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Paleo ">Paleo </option>
+                <option value="Gluten-Free">Gluten-Free</option>
+                <option value="Keto">Keto</option>
+          </select>
+        </li>
+      
+          <button class="btn ms-3 btn-outline-success" type="submit">Search</button>
+      </form>
+    </ul>
+
+  </div>
+    </div>
+  </div>
+</nav>
+    <h1 class="mt-5" style="text-align: center;">{{data.message}}</h1>
+ {{else}}
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+   
+   <div class="container-fluid hidden-button justify-content-center" aria-expanded="false">
+     Sorting & Filters 
+     <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#filtersCollapse" aria-controls="filtersCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    </button>
+   </div>
+    
+  <div class="collapse navbar-collapse" id="filtersCollapse">
+     <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div class="navbar-brand sort-title"> Sorting & Filters:</div>
+    <form class="d-flex" action="/filter" method="GET">
+    <ul class="navbar-nav my-2 my-lg-0" style="--bs-scroll-height: 100px;">
+      {{!-- Sort --}}
+      <li class="nav-item mx-1">
+          <select name="sort" id="sort" class="form-select">
+              <option value="createdAt">New</option>
+              <option value="likes">Likes</option>
+          </select>
+        </li>
+        {{!-- Filter by Region --}}
+      <li class="nav-item mx-1">
+          <select name="region" id="region" class="form-select">
+              <option value="Region">Region</option>
+              <option value="American">American</option>
+              <option value="Italian">Italian</option>                       
+              <option value="French">French</option>
+              <option value="Chinese ">Chinese </option>
+              <option value="Mexican">Mexican</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Thai">Thai</option>
+              <option value="Middle-Eastern">Middle-Eastern</option>
+              <option value="Asian">Asian</option>
+              <option value="European">European</option>
+              <option value="South-America">South-America</option>
+              <option value="African">African</option>
+              <option value="Australian">Australian</option>
+              <option value="Other">Other</option>
+          </select>
+        </li>
+
+      {{!-- Filter By Time of Day --}}
+
+      <li class="nav-item mx-1">
+          <select name="time" id="time" class="form-select">
+              <option value="time">Time of Day</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Breakfast">Breakfast</option>                       
+              <option value="Brunch">Brunch</option>
+              <option value="Dessert ">Dessert </option>
+              <option value="Other">Other</option>
+          </select>
+        </li>
+
+      {{!-- Filter By Diet --}}
+
+      <li class="nav-item mx-1">
+          <select name="diet" id="diet" class="form-select">
+              <option value="diet">Diet</option>
+              <option value="None">None</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Paleo ">Paleo </option>
+                <option value="Gluten-Free">Gluten-Free</option>
+                <option value="Keto">Keto</option>
+          </select>
+        </li>
+      
+          <button class="btn ms-3 btn-outline-success" type="submit">Search</button>
+      </form>
+    </ul>
+
+  </div>
+    </div>
+  </div>
+</nav>
+ {{> card}}
+
+{{/if}}

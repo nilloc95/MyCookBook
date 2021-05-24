@@ -1,0 +1,112 @@
+
+
+
+<div class="container text-center">
+    <h1>Create New Recipe:</h1>
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <form id="form" action="/create" method="POST">
+                <div class="mb-3">
+                    <input type="text" name="title" class="form-control my-3  m-auto" placeholder="Enter Recipe Name" id="title" required>
+                    <input type="text" name="image" class="form-control  m-auto my-1" placeholder='Image Link - if you don&apos;t have an image leave this field blank' id="image">
+                    <p class="text-secondary">User uploaded images coming soon...</p>
+
+                    <div class="form-floating  mb-3 m-auto">
+                        <label for="description">Recipe Description</label> <br><br>
+                        <textarea required class="form-control" placeholder="Enter Recipe Description" name="description" id="description" style="height: 100px"></textarea>
+                        
+                    </div>
+
+                    <div class="form-floating mb-3 m-auto">
+                        <textarea required class="form-control" placeholder="Ingredients" name="ingredients" id="ingredients" style="height: 200px"></textarea>
+                        <label for="ingredients">Enter Ingredients: 1 per line</label>
+                    </div>
+
+                    <div class="form-floating  mb-3 m-auto">
+                        <textarea required class="form-control" placeholder="Directions" name="instructions" id="instructions" style="height: 200px"></textarea>
+                        <label for="instructions">Enter Directions: 1 per line</label>
+                    </div>
+
+                    
+                    <div class="mt-4 mb-1 m-auto">
+                    <label class="form-label pt-3" for="region">Select what kind of dish this is:</label>
+                    <select name="region" id="region" class="form-select w-100 m-auto my-3">
+                        <option value="American">American</option>
+                        <option value="Italian">Italian</option>                       
+                        <option value="French">French</option>
+                        <option value="Chinese ">Chinese </option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Middle-Eastern">Middle-Eastern</option>
+                        <option value="Asian">Asian</option>
+                        <option value="European">European</option>
+                        <option value="South-America">South-America</option>
+                        <option value="African">African</option>
+                        <option value="Australian">Australian</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    </div>
+
+                    <div class="mt-4 mb-1  m-auto"></div>
+                        <label class="form-label my-1  m-auto" for="time">Breakfast / Lunch / or Dinner?</label>
+                        <select name="time" id="time" class="form-select  m-auto my-3">
+                            <option value="Dinner">Dinner</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Brunch">Brunch</option>
+                            <option value="Dessert">Dessert </option>
+                            <option value="Other ">Other </option>    
+                        </select>
+                    </div>  
+
+                    <div class="mt-4 mb-1  m-auto">
+                        <label class="form-label pt-3" for="diet">Diets this meal follows:</label>
+                        <select name="diet" id="diet" class="form-select w-100 m-auto my-3">
+                            <option value="None">None</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Paleo ">Paleo </option>
+                            <option value="Gluten-Free">Gluten-Free</option>
+                            <option value="Keto">Keto</option>
+                        </select>
+                    </div>
+
+                    <br><br>
+
+                    {{!-- Time and Serving Sizes --}}
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Servings</span>
+                        <input type="text" class="form-control" name="servingSize" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Prep Time</span>
+                        <input type="text" class="form-control" name="prepTime" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Cooking Time</span>
+                        <input type="text" class="form-control" name="cookTime" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Total Time</span>
+                        <input type="text" class="form-control" name="totalTime" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+
+                
+                    <div class="d-grid gap-2 mb-5">
+                        <button type="submit" class="btn btn-success my-5">Save Recipe</button>
+                    </div>
+                    
+
+                </div>
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.16.0/ckeditor.js" integrity="sha512-7My1gsUz5JUQgT8+P0sHKaPel/77X3zjGZsXbTS8Y7MhDEJ+f9xg9H+pPzONFL5djye0zWLlxFLApGsWQ1gdfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            CKEDITOR.replace("description", {
+                plugins: "wysiwygarea, toolbar, font, wsc, scayt"
+            })
+        </script>
+    </div>
+</div>

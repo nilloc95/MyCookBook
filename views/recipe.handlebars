@@ -14,11 +14,11 @@
                         <span class="badge bg-secondary">{{data.likes}}</span>
                         <span class="float-end">{{{editIconRecipe data.author data.userId data._id}}}</span>
                     </h4><br>
-                    <h4 class="text-dark text-center border-bottom row">
+                    <h4 class="text-dark text-center border-bottom pb-1 row">
                         <div class="col-md-3">Region: {{data.region}}</div>
                         <div class="col-md-3">Type: {{data.time}}</div>
                         <div class="col-md-3 ">Diet: {{data.diet}}</div>
-                        <a href="/profile/{{data.author}}" class="col-md-3 author">By: {{data.displayName}}</a>
+                        <a href="/profile/{{data.author}}" class="col-md-3 author">By: <img class="user-image" src="{{data.userImage}}"> {{data.displayName}}</a>
 
                     </h4>
                 </div>
@@ -27,8 +27,10 @@
                 <div class="col-md-6">
             {{#if (checkUrl data.image)}}
                 <img src={{data.image}} class="img-fluid" onerror="src = addImage()" alt="{{data.title}}">
+                <span>Image Source: <a href={{data.image}}>{{data.image}}</a></span>
             {{else}}
                 <img src='https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg' class="img-fluid" alt="{{data.title}}">
+                <span>Image Source: <a href="https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg">"https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg"</a></span>
             {{/if}}
                 </div>
                 <div class="col-md-6">

@@ -389,6 +389,8 @@ app.get('/recipe/:id',function(req,res){
   .then((result) => {
     User.findById(result.author) 
     .then((user) => {
+      console.log(user)
+      result.userImage = user.image
       result.userLikes = res.locals.userLikes
       result.userId = res.locals.userId
       result.displayName = capitalize.words(user.displayName)

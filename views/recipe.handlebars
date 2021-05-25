@@ -27,10 +27,10 @@
                 <div class="col-md-6">
             {{#if (checkUrl data.image)}}
                 <img src={{data.image}} class="img-fluid" onerror="src = addImage()" alt="{{data.title}}">
-                <span>Image Source: <a href={{data.image}}>{{data.image}}</a></span>
+                
             {{else}}
                 <img src='https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg' class="img-fluid" alt="{{data.title}}">
-                <span>Image Source: <a href="https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg">"https://cdn.pixabay.com/photo/2018/04/28/14/12/food-3357374_960_720.jpg"</a></span>
+                
             {{/if}}
                 </div>
                 <div class="col-md-6">
